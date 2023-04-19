@@ -495,7 +495,7 @@ export default defineComponent({
                     sha: process.env.NODE_ENV == 'development' ? 'dev' : 'main',
                     per_page: '10'
                 } as Record<string, string>
-                fetch(url + '?' + new URLSearchParams(fetchData).toString())
+                fetch(url + '?' + new URLSearchParams(fetchData).toString(), {mode:'cors'})
                     .then(response => response.json())
                     .then(data => {
                         // 正式版本的更新记录必须是 # 开头的 commit
