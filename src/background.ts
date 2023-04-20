@@ -78,18 +78,6 @@ app.on('activate', () => {
 })
 
 app.on('ready', async () => {
-    if (isDevelopment && !process.env.IS_TEST) {
-        try {
-            await installExtension(VUEJS3_DEVTOOLS)
-            // 这是个谷歌分析调试工具，好像用不了？？
-            // await installExtension({
-            //     id: 'ilnpmccnfdjdjjikgkefkcegefikecdc',
-            //     electron: '>=1.2.1'
-            // })
-        } catch (e: any) {
-            console.error('Vue Devtools failed to install:', e.toString())
-        }
-    }
     createWindow()
 })
 
