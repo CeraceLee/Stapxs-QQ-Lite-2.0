@@ -217,8 +217,6 @@ export default defineComponent({
             packageInfo: packageInfo,
             util: Util
         }
-    },
-    mounted() {
     }
 })
 </script>
