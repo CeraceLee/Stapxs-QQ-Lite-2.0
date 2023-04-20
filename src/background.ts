@@ -5,8 +5,6 @@ import windowStateKeeper from 'electron-window-state'
 import regIpcListener from './function/electron/ipc'
 import path from 'path'
 
-import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
-
 import { Menu, session } from 'electron'
 import { app, protocol, BrowserWindow } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
