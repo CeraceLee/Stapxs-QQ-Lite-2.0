@@ -177,7 +177,7 @@ function saveUser(list: (UserFriendElem & UserGroupElem)[]) {
     runtimeData.userList = runtimeData.userList.concat(list)
     // 刷新置顶列表
     const info = runtimeData.sysConfig.top_info as { [key: string]: number[] } | null
-    if (info != null && runtimeData.onMsgList.length <= 0) {
+    if (info != null) {
         const topList = info[runtimeData.loginInfo.uin]
         if (topList !== undefined) {
             runtimeData.userList.forEach((item) => {
