@@ -630,7 +630,7 @@ export default defineComponent({
             const fetchData = {
                 time: new Date().getTime().toString()
             } as Record<string, string>
-            fetch(url + '?' + new URLSearchParams(fetchData).toString())
+            fetch(url + '?' + new URLSearchParams(fetchData).toString(), {mode:'cors'})
                 .then(response => response.json())
                 .then(data => {
                     // 获取已显示过的公告 ID
