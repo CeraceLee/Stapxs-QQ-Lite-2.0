@@ -180,11 +180,13 @@ function saveUser(list: (UserFriendElem & UserGroupElem)[]) {
     if (info != null && runtimeData.onMsgList.length <= 0) {
         const topList = info[runtimeData.loginInfo.uin]
         if (topList !== undefined) {
-            list.forEach((item) => {
+            runtimeData.userList.forEach((item) => {
                 const id = Number(item.user_id ? item.user_id : item.group_id)
                 if (topList.indexOf(id) >= 0) {
                     item.always_top = true
-                    runtimeData.onMsgList.push(item)
+                    if (!runtimeData.onMsgList.find((i) => id == (i.user_id ? i.user_id : i.group_id))) {
+                        runtimeData.onMsgList.push(item)
+                    }
                 }
             })
         }
